@@ -7,50 +7,61 @@ Auto Ticket Classification using Flow Designer
 ## 1. Introduction
 
 The school IT Helpdesk receives multiple support requests every day
-from students and teachers. These requests are related to common
-IT issues such as network connectivity, hardware failures, account
-access problems, and system performance issues.
+from students and teachers. These requests are related to common IT
+issues such as network connectivity, hardware failures, account access
+problems, and system performance issues.
 
-## 2. Existing Problem
+Currently, IT staff manually review each support request, identify the
+issue type, select the appropriate category and subcategory, and inform
+the caller about ticket creation.
 
-Currently, IT staff manually review each support request and:
+This manual process is time-consuming, may result in classification
+errors, and becomes difficult to manage when the number of support
+requests increases.
 
-- Identify the issue type.
-- Select the correct category.
-- Select the appropriate subcategory.
-- Inform the caller about ticket creation.
+## 2. Business Problem
 
-This manual process is time-consuming and may result in
-classification errors. It also becomes difficult to manage when
-the number of support requests increases.
+The existing manual ticket classification process creates the following
+challenges:
+
+- IT staff need to manually identify the issue type.
+- Category and subcategory selection requires manual effort.
+- Incorrect classification may occur.
+- Ticket processing takes additional time.
+- Increasing ticket volume makes the process difficult to scale.
+- The process requires repetitive work from IT support staff.
 
 ## 3. Proposed Solution
 
 The proposed solution is an automated ticket classification system
 using ServiceNow Flow Designer.
 
-The system will analyze the information provided in the ticket and
-automatically classify the ticket based on the issue details.
+The system will analyze the issue description provided in an IT ticket
+and automatically determine the appropriate Category and Subcategory.
 
-## 4. Business Objectives
+Flow Designer will be used to automate the classification process and
+reduce the need for manual intervention.
 
-The main objectives of the proposed system are:
+## 4. Business Requirements
 
-1. Reduce manual effort for IT support staff.
-2. Automatically classify incoming support tickets.
-3. Improve ticket classification consistency.
-4. Reduce classification errors.
-5. Speed up the ticket handling process.
-6. Handle increasing support requests efficiently.
+The system must:
+
+1. Automatically classify IT tickets based on the issue description.
+2. Assign both Category and Subcategory without manual intervention.
+3. Support dependent choice logic between Category and Subcategory.
+4. Send an automated email notification to the caller upon ticket
+   creation.
+5. Store ticket information in a structured and standardized format.
+6. Ensure easy maintenance and future scalability.
 
 ## 5. Example Ticket Classification
 
-| Issue | Category |
-|---|---|
-| Wi-Fi is not working | Network |
-| Laptop is not starting | Hardware |
-| Cannot login to account | Account Access |
-| Computer is very slow | System Performance |
+| Issue Description | Category | Subcategory |
+|---|---|---|
+| Wi-Fi is not working | Network | Connectivity |
+| Laptop is not starting | Hardware | Computer |
+| Cannot login to account | Account Access | Login |
+| Computer is very slow | System Performance | Slow Performance |
 
 ## 6. Users
 
@@ -61,15 +72,49 @@ The main users of the system are:
 - IT Helpdesk Staff
 - System Administrators
 
-## 7. Expected Outcome
+## 7. Business Process
 
-The automated classification process will help the IT Helpdesk
-reduce manual work, classify tickets consistently, and provide
-faster support to students and teachers.
+The proposed ticket classification process will follow these steps:
 
-## 8. Conclusion
+1. A student or teacher submits an IT support request.
+2. A ticket is created in the system.
+3. The issue description is analyzed by the automated flow.
+4. The appropriate Category is identified.
+5. The corresponding Subcategory is selected using dependent choice
+   logic.
+6. The ticket information is stored in a standardized format.
+7. An automated email notification is sent to the caller.
+8. The IT Helpdesk can continue processing the classified ticket.
 
-Auto Ticket Classification using Flow Designer provides an
-automated approach for handling IT support tickets. By reducing
-manual classification and improving consistency, the solution can
-make the school IT Helpdesk process more efficient and scalable.
+## 8. Expected Benefits
+
+The proposed solution is expected to provide the following benefits:
+
+- Reduction in manual classification effort.
+- Faster ticket processing.
+- Consistent Category and Subcategory assignment.
+- Reduction in classification errors.
+- Automated communication with callers.
+- Better organization of ticket information.
+- Easier maintenance of the classification process.
+- Improved scalability when ticket volume increases.
+
+## 9. Expected Outcome
+
+The automated classification process will help the school IT Helpdesk
+handle support requests more efficiently.
+
+By using ServiceNow Flow Designer, tickets can be classified
+automatically based on their issue descriptions, while Category and
+Subcategory are assigned consistently. Automated email notifications
+will also improve communication with students and teachers.
+
+## 10. Conclusion
+
+Auto Ticket Classification using Flow Designer provides an automated
+approach to managing IT support tickets.
+
+The solution reduces repetitive manual work, improves ticket
+classification consistency, supports automated notifications, and
+provides a structured process that can be maintained and scaled in the
+future.
